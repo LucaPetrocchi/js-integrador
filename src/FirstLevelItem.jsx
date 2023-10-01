@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState } from "react"
-import SecondLevelItems from './SecondLevelItems'
+import SecondLevelFolder from './SecondLevelFolder'
 
 function FirstLevelItem ({item, itemColor, itemActive, url, isFolder, otherItems}) {
 
@@ -45,7 +45,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, isFolder, otherItems
 
             </li>
             {isFolder && (openState ? (
-                    <SecondLevelItems item={subItems} />
+                    <SecondLevelFolder item={subItems} />
                 ) : null)}
             </>
         )
