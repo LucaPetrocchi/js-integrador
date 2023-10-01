@@ -24,8 +24,8 @@ function FirstLevelItem ({item, itemColor, itemActive, url, isFolder, otherItems
     return(<>
             <li 
                 style={{
-                    background: hoverState ? itemActive : 'none',
-                    cursor: hoverState ? 'pointer' : 'none',
+                    background: (hoverState || openState ) ? itemActive : 'none',
+                    cursor: (hoverState || openState ) ? 'pointer' : 'none',
                 }}
                 className='Menu-item'
                 onMouseEnter={hoverToggle}
