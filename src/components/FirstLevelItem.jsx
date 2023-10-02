@@ -17,6 +17,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
         setOpenState(!openState)
     }
 
+    // >>>>>>>>>>>>>>>>>>>> TODO poner el svg en un componente aparte
     const itemTriangle = <svg xmlns="http://www.w3.org/2000/svg" width='10' height='5' style={{marginLeft: '3px'}}>
         <path fill={itemColor} d='M0 0 L10 0 L5 5 Z' />
     </svg> // esta es la flechita de dropdown
