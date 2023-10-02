@@ -21,7 +21,7 @@ export default function UML(props) {
         <g stroke={CLASS_UML.borderColor} strokeWidth="1px" fill={CLASS_UML.headColor}>
           
           {/* RECTANGULO TITULO */}
-          <rect x="0px" y="0px" width="500px" height="100px" />
+          <rect x="0px" y="0px" width="100%" height="100px" />
           <text x="50%" y="60px" fontSize="35px" alignmentBaseline="middle" textAnchor="middle" fontWeight="bold" fill={CLASS_UML.textColor} stroke="none">
             {
               CLASS_UML.name
@@ -32,7 +32,7 @@ export default function UML(props) {
         <g stroke={CLASS_UML.borderColor} strokeWidth="2px" fill="white">
           
           {/* RECTANGULO ATRIBUTOS */}
-          <rect x="0px" y="100px" width="500px" height={`${height_rect_attribute}px`} />
+          <rect x="0px" y="100px" width="100%" height={`${height_rect_attribute}px`} />
           {
             CLASS_UML.attributes.map((attribute, index) => (
               <text key={attribute} x="50%" y={`${150 + index * attributeSpacing}px`} fontSize="25px" alignmentBaseline="middle" textAnchor="middle" fill={CLASS_UML.textColor} stroke="none">
@@ -45,7 +45,7 @@ export default function UML(props) {
         <g stroke={CLASS_UML.borderColor} strokeWidth="2px" fill="white">
           
           {/* RECTANGULO METODOS */}
-          <rect x="0px" y={`${height_rect_attribute}px`} width="500px" height={`${height_rect_method}px`} />
+          <rect x="0px" y={`${height_rect_attribute}px`} width="100%" height={`${height_rect_method}px`} />
           {
             CLASS_UML.methods.map((method, index) => (
               <text key={method} x="50%" y={`${75 + height_rect_attribute + index * methodSpacing}px`} fontSize="25px" alignmentBaseline="middle" textAnchor="middle" fill={CLASS_UML.textColor} stroke="none">
