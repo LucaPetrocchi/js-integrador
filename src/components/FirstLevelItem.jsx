@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useState } from "react"
 import FolderContents from './secondlevel/FolderContents'
 import './FirstLevelItem.css'
+import ItemTriangle from './SvgArrow'
 
 function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {    
     const { id, isFolder, name } = item
@@ -17,11 +18,6 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
         setOpenState(!openState)
     }
 
-    // >>>>>>>>>>>>>>>>>>>> TODO poner el svg en un componente aparte
-    const itemTriangle = <svg xmlns="http://www.w3.org/2000/svg" width='10' height='5' style={{marginLeft: '3px'}}>
-        <path fill={itemColor} d='M0 0 L10 0 L5 5 Z' />
-    </svg> // esta es la flechita de dropdown
-
     const subItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre === id) : undefined
     // si isFolder == true, recibe todos los items cuya idPadre sea igual a su propia id
     // es decir, obtiene todos los items que deberían ir dentro suyo
@@ -32,6 +28,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 style={{
                     background: (hoverState || openState ) ? itemActive : 'none', 
                     cursor: (hoverState || openState ) ? 'pointer' : 'none',
+
                     // si tiene el mouse arriba O hiciste clic, el background y el cursor cambian
                 }}
                 className='First-Level-Item'
@@ -43,13 +40,14 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                     style={{
                         color: itemColor,
                         textDecoration: 'none',
-                        margin: 'auto 0'
+                        margin: 'auto 3px auto 0px'
                     }}
                 >
                     {name} 
-                </a> 
-                {isFolder && itemTriangle} {/* si es folder, pone el triangulito SVG */}
-
+                </a>
+                <div className={openState ? 'arrow-active arrow-transition':'arrow-transition' }> 
+                    {isFolder && <ItemTriangle arrowColor={itemColor} />} {/* si es folder, pone el triangulito SVG */}
+                </div>
             </li>
             {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
                     <FolderContents items={subItems} />

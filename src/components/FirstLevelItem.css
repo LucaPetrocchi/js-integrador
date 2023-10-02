@@ -4,3 +4,12 @@
     padding: 5px 10px;
     position: relative;
 }
+
+.arrow-transition {
+    transform: rotate(-90deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+.arrow-active {
+    transform: rotate(0deg)
+}
