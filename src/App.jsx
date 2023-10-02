@@ -1,14 +1,33 @@
 
 import './App.css'
 import Menu from './components/Menu'
+import UML from './components/DrawClass';
+
+const CLASS_UML = {
+  name: 'Person',
+  attributes: ['+name:str','+phoneNumber:str','+emailAddress:str',],
+  methods:['+purcharseParkinPass()'],
+  borderColor:'red',
+  headColor:'pink',
+  textColor:'black'
+}
+
+const CLASS_UML2 = {
+  name: 'Addres',
+  attributes: ['+Street:str','+City:str','+State:str','+PostalCode:int','+Country:str',],
+  methods:['-validate():bool', '+outputLabel():str'],
+  borderColor:'blue',
+  headColor:'lightblue',
+  textColor:'black'
+}
 
 function App() {
 
   const configMenu = {
     configColor: {
-      background:'#f4f5fa', // Color de Fondo General de la botonera
+      background:'#c3c3c3', // Color de Fondo General de la botonera
       itemBackground: '#d0d0d0',// Color de Fondo de los subMenús
-      itemColor:'#666', // Color del texto de cada item del menú
+      itemColor:'black', // Color del texto de cada item del menú
       itemActive:'#a8a8a8', // Color cuando hace click y se abre un submenú
     },
     idFirstNivel : 150,
@@ -28,6 +47,11 @@ function App() {
   return (<>
   
     <Menu config={configMenu} />
+
+    <p>UML 1</p>
+    <UML CLASS_UML={CLASS_UML} />
+    <p>UML 2</p>
+    <UML CLASS_UML={CLASS_UML2} />
   
   </>)
 }

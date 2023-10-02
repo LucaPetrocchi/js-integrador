@@ -50,7 +50,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 </div>
             </li>
             {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
-                    <FolderContents items={subItems} />
+                    <FolderContents items={subItems} itemBackgorund={itemActive} />
                 ) : null)}
             </>
         )
