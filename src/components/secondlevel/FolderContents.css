@@ -1,10 +1,14 @@
+.folderContents {
+    position: absolute;
+    padding: 0;
+}
+
 .folderContentsItems {
     position: relative;
-    top: 50px;
-    right: 100%;
     padding: 4px 10px;
     list-style-type: none;
 }
+
 
 .folderContentsItems:hover {
     filter: brightness(125%);

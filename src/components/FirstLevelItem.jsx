@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types'
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import FolderContents from './secondlevel/FolderContents'
 import './FirstLevelItem.css'
 import ItemTriangle from './SvgArrow'
 
 function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {    
+    const ref = useRef()
     const { id, isFolder, name } = item
 
     const [hoverState, setHoverState] = useState(false) // state de hover
     const [openState, setOpenState] = useState(false) // state de folder: si está abierto o no
+    const [positionX, setPositionX] = useState(0)
 
     function hoverToggle () {
         setHoverState(!hoverState)
@@ -17,6 +19,11 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
     function openToggle () {
         setOpenState(!openState)
     }
+
+    useEffect(() => {
+        const rect = ref.current.getBoundingClientRect()
+        setPositionX(rect.x)
+    }, [])
 
     const subItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre === id) : undefined
     // si isFolder == true, recibe todos los items cuya idPadre sea igual a su propia id
@@ -28,9 +35,9 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 style={{
                     background: (hoverState || openState ) ? itemActive : 'none', 
                     cursor: (hoverState || openState ) ? 'pointer' : 'none',
-
                     // si tiene el mouse arriba O hiciste clic, el background y el cursor cambian
                 }}
+                ref={ref}
                 className='First-Level-Item'
                 onMouseEnter={hoverToggle}
                 onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
@@ -50,7 +57,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 </div>
             </li>
             {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
-                    <FolderContents items={subItems} itemBackgorund={itemActive} />
+                    <FolderContents items={subItems} itemBackground={itemActive} offset={positionX}/>
                 ) : null)}
             </>
         )

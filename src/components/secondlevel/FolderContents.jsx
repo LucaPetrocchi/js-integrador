@@ -1,21 +1,13 @@
 import PropTypes from 'prop-types'
 import './FolderContents.css'
 
-function FolderContents ({items, itemBackgorund}) {
-    
-    // manejador de clic que recibe un evento 
-    const handleItemClick = (e) => {
-        // rect va a ser una constante durante el ciclo de vida de la funcion, va a representar el elemento HTML
-        const rect = e.target.getBoundingClientRect();
-        // limite izquierdo del elemento, limite superior del elemento
-        console.log(`left ${rect.right} | top ${rect.bottom}`)
-    }
+function FolderContents ({items, itemBackground, offset}) {
 
     return(
-        <ul>
+        <ul className='folderContents' style={{translate: `${offset-35}px 50px`}}>
             {items.map((item) => { // este return va a devolver elementos SecondLevelItem
                 return (
-                    <li key={item.id} className='folderContentsItems' style={{background: itemBackgorund}} onClick={handleItemClick} >
+                    <li key={item.id} className='folderContentsItems' style={{background: itemBackground}}>
                         {item.name}
                     </li>
                 )
@@ -27,5 +19,7 @@ function FolderContents ({items, itemBackgorund}) {
 export default FolderContents
 
 FolderContents.propTypes = {
-    items: PropTypes.object,
+    items: PropTypes.array,
+    itemBackground: PropTypes.string,
+    offset: PropTypes.number,
 }
