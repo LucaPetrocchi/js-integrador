@@ -4,24 +4,41 @@ import FolderContents from './secondlevel/FolderContents'
 import './FirstLevelItem.css'
 import ItemTriangle from './SvgArrow'
 
-function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {    
+function FirstLevelItem ({item, itemColor, itemActive, url, otherItems,}) {    
     const { id, isFolder, name } = item
 
     const [hoverState, setHoverState] = useState(false) // state de hover
     const [openState, setOpenState] = useState(false) // state de folder: si está abierto o no
+    const [right, setRight] = useState('')
+    const [bottom, setBottom] = useState('')
 
     function hoverToggle () {
         setHoverState(!hoverState)
     }
 
-    function openToggle () {
+    function openToggle (rect) {
         setOpenState(!openState)
+        setRight(rect.right)
+        setBottom(rect.bottom)
     }
 
     const subItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre === id) : undefined
     // si isFolder == true, recibe todos los items cuya idPadre sea igual a su propia id
     // es decir, obtiene todos los items que deberían ir dentro suyo
     // de lo contrario, subItems = undefined
+
+    // manejador de clic que recibe un evento 
+
+    console.log(right)
+
+    const handleItemClick = (e) => {
+        // rect va a ser una constante durante el ciclo de vida de la funcion, va a representar el elemento HTML
+        const rect = e.target.getBoundingClientRect();
+        openToggle(rect)
+
+        // limite izquierdo del elemento, limite superior del elemento
+        // console.log(`right ${right} | bottom  ${bottom}`)
+    }
 
     return(<>
             <li 
@@ -34,7 +51,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 className='First-Level-Item'
                 onMouseEnter={hoverToggle}
                 onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
-                onClick={ isFolder ? openToggle : undefined } // al hacer click dentro, cambia el state open
+                onClick={ isFolder ? handleItemClick : undefined } // al hacer click dentro, cambia el state open
             > 
                 <a href={url}
                     style={{
@@ -50,8 +67,8 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 </div>
             </li>
             {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
-                    <FolderContents items={subItems} itemBackgorund={itemActive} />
-                ) : null)}
+                    <FolderContents  items={subItems} itemBackground={itemActive} right={right} bottom={bottom} /> // style={{right: `${right}`, bottom: `${bottom}`}}
+                ) : null)} 
             </>
         )
 
