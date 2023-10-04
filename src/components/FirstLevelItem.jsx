@@ -38,7 +38,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
                 onClick={ isFolder ? openToggle : undefined } // al hacer click dentro, cambia el state open
             > 
-                <a href={url}
+                <p 
                     style={{
                         color: itemColor,
                         textDecoration: 'none',
@@ -46,7 +46,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                     }}
                 >
                     {name} 
-                </a>
+                </p>
                 <div className={openState ? 'arrow-active arrow-transition':'arrow-transition' }> 
                     {isFolder && <ItemTriangle arrowColor={itemColor} />} {/* si es folder, pone el triangulito SVG */}
                 </div>

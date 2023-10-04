@@ -37,7 +37,7 @@ function App() {
 
       {name:'Action', isFolder:false, id:3, idPadre:2},
       {name:'Another action', isFolder:false, id:4, idPadre:2},
-      {name:'sub menu', isFolder:true, id:5, idPadre:150},
+      {name:'sub menu', isFolder:true, id:5, idPadre:2},
       
       {name:'Another action', isFolder:false, id:55, idPadre:5},
       {name:'something else here', isFolder:false, id:56, idPadre:5},

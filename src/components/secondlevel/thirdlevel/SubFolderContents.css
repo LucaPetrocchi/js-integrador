@@ -1,4 +1,4 @@
-.folderContents {
+.subfolderContents {
     position: absolute;
     align-self: flex-start;
     width: 100%;
@@ -8,7 +8,7 @@
     min-width: max-content;
 }
 
-.folderContentsItems {
+.subfolderContentsItems {
     position: relative;
     padding-left: 0;
     padding: 4px 10px;
@@ -16,6 +16,6 @@
 }
 
 
-.folderContentsItems:hover {
+.subfolderContentsItems:hover {
     filter: brightness(125%);
 }
