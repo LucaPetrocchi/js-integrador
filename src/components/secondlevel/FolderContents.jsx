@@ -4,7 +4,7 @@ import './FolderContents.css'
 function FolderContents ({items, itemBackground, offset}) {
 
     return(
-        <ul className='folderContents' style={{translate: `${offset-35}px 50px`}}>
+        <ul className='folderContents' style={{translate: `${offset}px 50px`}}>
             {items.map((item) => { // este return va a devolver elementos SecondLevelItem
                 return (
                     <li key={item.id} className='folderContentsItems' style={{background: itemBackground}}>

@@ -23,6 +23,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
     useEffect(() => {
         const rect = ref.current.getBoundingClientRect()
         setPositionX(rect.x)
+        console.log(rect)
     }, [])
 
     const subItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre === id) : undefined
