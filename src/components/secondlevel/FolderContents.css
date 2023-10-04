@@ -7,15 +7,3 @@
     list-style-type: none;
     min-width: max-content;
 }
-
-.folderContentsItems {
-    position: relative;
-    padding-left: 0;
-    padding: 4px 10px;
-    margin:0;
-}
-
-
-.folderContentsItems:hover {
-    filter: brightness(125%);
-}

@@ -1,0 +1,15 @@
+.folderContentsItems {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    padding: 5px 10px;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+}
+
+
+.folderContentsItems:hover {
+    filter: brightness(125%);
+}
+

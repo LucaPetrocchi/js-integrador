@@ -7,7 +7,6 @@ import ItemTriangle from './SvgArrow'
 function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {    
     const ref = useRef()
     const { id, isFolder, name } = item
-
     const [hoverState, setHoverState] = useState(false) // state de hover
     const [openState, setOpenState] = useState(false) // state de folder: si está abierto o no
 
@@ -24,6 +23,8 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
     // si isFolder == true, recibe todos los items cuya idPadre sea igual a su propia id
     // es decir, obtiene todos los items que deberían ir dentro suyo
     // de lo contrario, subItems = undefined
+    const lastLevelItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre != id) : undefined
+    console.log(lastLevelItems)
 
     return(<>
             <li 
@@ -51,7 +52,7 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                     {isFolder && <ItemTriangle arrowColor={itemColor} />} {/* si es folder, pone el triangulito SVG */}
                 </div>
                 {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
-                    <FolderContents items={subItems} itemBackground={itemActive}/>
+                    <FolderContents items={subItems} subItems={lastLevelItems} itemBackground={itemActive}/>
                 ) : null)}
             </li>
 
