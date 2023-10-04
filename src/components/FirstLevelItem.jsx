@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import FolderContents from './secondlevel/FolderContents'
 import './FirstLevelItem.css'
 import ItemTriangle from './SvgArrow'
@@ -10,7 +10,6 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
 
     const [hoverState, setHoverState] = useState(false) // state de hover
     const [openState, setOpenState] = useState(false) // state de folder: si está abierto o no
-    const [positionX, setPositionX] = useState(0)
 
     function hoverToggle () {
         setHoverState(!hoverState)
@@ -20,11 +19,6 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
         setOpenState(!openState)
     }
 
-    useEffect(() => {
-        const rect = ref.current.getBoundingClientRect()
-        setPositionX(rect.x)
-        console.log(rect)
-    }, [])
 
     const subItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre === id) : undefined
     // si isFolder == true, recibe todos los items cuya idPadre sea igual a su propia id
@@ -56,10 +50,11 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                 <div className={openState ? 'arrow-active arrow-transition':'arrow-transition' }> 
                     {isFolder && <ItemTriangle arrowColor={itemColor} />} {/* si es folder, pone el triangulito SVG */}
                 </div>
-            </li>
-            {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
-                    <FolderContents items={subItems} itemBackground={itemActive} offset={positionX}/>
+                {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
+                    <FolderContents items={subItems} itemBackground={itemActive}/>
                 ) : null)}
+            </li>
+
             </>
         )
 
