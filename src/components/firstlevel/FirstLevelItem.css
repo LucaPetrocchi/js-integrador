@@ -1,21 +1,5 @@
 .firstLevelItem {
-    display: flex;
-    align-items: center;
-    padding-left: 0;
-    padding: 5px 10px;
-    position: relative;
-    list-style-type: none;
-    margin: 0;
     transition: 300ms;
     border-radius: 8px 8px 0px 0px;
     cursor: pointer;
-}
-
-.arrow-transition {
-    transform: rotate(-90deg);
-    transition: transform 0.2s ease-in-out;
-}
-
-.arrow-active {
-    transform: rotate(0deg)
 }

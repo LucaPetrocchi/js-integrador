@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import { useState, useRef } from "react"
-import FolderContents from '../secondlevel/FolderContents'
 import './FirstLevelItem.css'
-import ItemTriangle from '../SvgArrow'
+import '../shared/style.css'
+import ItemTriangle from '../shared/SvgArrow'
+import FolderContents from '../secondlevel/FolderContents'
 
-function FirstLevelItem({ item, itemColor, itemActive, url, otherItems }) {
+function FirstLevelItem({ item, itemColor, itemActive, otherItems }) {
   const ref = useRef()
   const { id, isFolder, name } = item
   const [hoverState, setHoverState] = useState(false) // state de hover
@@ -32,7 +33,7 @@ function FirstLevelItem({ item, itemColor, itemActive, url, otherItems }) {
                     borderBottom: (hoverState || openState ) ? '1px solid gray' : 'none',
                 }}
                 ref={ref}
-                className='firstLevelItem'
+                className='firstLevelItem sharedItem'
                 onMouseEnter={hoverToggle}
                 onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
                 onClick={ isFolder ? openToggle : undefined } // al hacer click dentro, cambia el state open
@@ -46,7 +47,7 @@ function FirstLevelItem({ item, itemColor, itemActive, url, otherItems }) {
                 >
                     {name}
                 </p>
-                <div className={openState||hoverState ? 'arrow-active arrow-transition':'arrow-transition' }> 
+                <div className={openState||hoverState ? 'arrowActive arrowTransition':'arrowTransition' }> 
                     {(isFolder||hoverState) && isFolder ? <ItemTriangle arrowColor={itemColor} /> : undefined} {/* si es folder, pone el triangulito SVG */}
                 </div>
                 {isFolder && (openState || hoverState ? ( // si es folder y está abierto, muestra sus contenidos

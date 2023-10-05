@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import { useState, useEffect, useRef } from "react"
 import "./SecondLevelItem.css"
+import '../shared/style.css'
 import SubFolderContents from "../thirdlevel/SubFolderContents"
-import ItemTriangle from "../SvgArrow"
+import ItemTriangle from '../shared/SvgArrow'
 
 function SecondLevelItem({ item, subItems, itemBackground }) {
   const ref = useRef()
@@ -32,7 +33,7 @@ function SecondLevelItem({ item, subItems, itemBackground }) {
     return ( 
         // style={{background: `linear-gradient(to left,${itemBackground}, black, ${itemBackground})`}}
         // <div className="elborde" >
-            <li className="secondLevelItem"
+            <li className="secondLevelItem sharedItem"
                 style={{background: itemBackground}}
                 onMouseEnter={hoverToggle}
                 onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
@@ -40,7 +41,7 @@ function SecondLevelItem({ item, subItems, itemBackground }) {
                 ref={ref}
                 >
             {name}
-            <div className='arrow-transition'> 
+            <div className='arrowTransition'> 
                     {isFolder && <ItemTriangle />} {/* si es folder, pone el triangulito SVG */}
             </div>
             {isFolder && (openState||hoverState ? (

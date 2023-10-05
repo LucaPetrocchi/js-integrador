@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import './FolderContents.css'
+import '../shared/style.css'
 import SecondLevelItem from './SecondLevelItem'
 
 function FolderContents({ items, subItems, itemBackground }) {
 
   return (
     <ul
-      className='folderContents'
+      className='folderContents sharedFolder'
       style={{ translate: `-10px 44.9px`, backgroundColor: itemBackground }}
     >
       {items.map((item, index) => {
