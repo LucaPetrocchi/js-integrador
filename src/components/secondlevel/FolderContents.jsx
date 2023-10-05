@@ -8,7 +8,7 @@ function FolderContents({ items, subItems, itemBackground }) {
   return (
     <ul
       className='folderContents sharedFolder'
-      style={{ translate: `-10px 44.9px`, backgroundColor: itemBackground }}
+      style={{ translate: `-10px 44.9px`, backgroundColor: itemBackground,  boxShadow: '10px 10px 5px 0px #222222' }}
     >
       {items.map((item, index) => {
         return (<div key={index}>
