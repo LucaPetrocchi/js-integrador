@@ -6,6 +6,11 @@
     position: relative;
     list-style-type: none;
     margin: 0;
+    transition: 300ms;
+}
+
+.First-Level-Item {
+    cursor: pointer;
 }
 
 .arrow-transition {

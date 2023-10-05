@@ -24,13 +24,12 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
     // es decir, obtiene todos los items que deberían ir dentro suyo
     // de lo contrario, subItems = undefined
     const lastLevelItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre != id) : undefined
-    console.log(lastLevelItems)
 
     return(<>
             <li 
                 style={{
                     background: (hoverState || openState ) ? itemActive : 'none', 
-                    cursor: (hoverState || openState ) ? 'pointer' : 'none',
+                    // cursor: (hoverState || openState ) ? 'pointer' : 'none',
                     // si tiene el mouse arriba O hiciste clic, el background y el cursor cambian
                 }}
                 ref={ref}
