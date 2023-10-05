@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import './Menu.css'
-import FirstLevelItem from './FirstLevelItem'
+import FirstLevelItem from './firstlevel/FirstLevelItem'
 
 function Menu ({config}) {
     const current_url = '/#'

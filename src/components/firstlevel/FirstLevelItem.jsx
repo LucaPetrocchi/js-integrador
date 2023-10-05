@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import { useState, useRef } from "react"
-import FolderContents from './secondlevel/FolderContents'
+import FolderContents from '../secondlevel/FolderContents'
 import './FirstLevelItem.css'
-import ItemTriangle from './SvgArrow'
+import ItemTriangle from '../SvgArrow'
 
 function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {    
     const ref = useRef()

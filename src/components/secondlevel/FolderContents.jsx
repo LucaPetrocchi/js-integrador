@@ -28,6 +28,7 @@ export default FolderContents
 
 FolderContents.propTypes = {
     items: PropTypes.array,
+    subItems: PropTypes.array,
     itemBackground: PropTypes.string,
     offset: PropTypes.number,
 }

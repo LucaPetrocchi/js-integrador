@@ -24,7 +24,7 @@ const CLASS_UML2 = {
 
 const CLASS_UML3 = {
   name: 'Person',
-  attributes: ['+name:str','+phoneNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber:str','+emailAddress:str',],
+  attributes: ['+name:str','+phoneNumber:str','+emailAddress:str',],
   methods:['+purcharseParkinPass()'],
   borderColor:'green',
   headColor:'#ccff99',

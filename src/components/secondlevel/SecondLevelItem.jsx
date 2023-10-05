@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types'
 import { useState, useEffect, useRef } from "react"
 import "./SecondLevelItem.css"
-import SubFolderContents from "./thirdlevel/SubFolderContents"
+import SubFolderContents from "../thirdlevel/SubFolderContents"
 import ItemTriangle from "../SvgArrow"
 
 function SecondLevelItem ({item, subItems, itemBackground}) {
@@ -52,4 +53,15 @@ function SecondLevelItem ({item, subItems, itemBackground}) {
 
 }
 
+SecondLevelItem.propTypes = {
+    item: PropTypes.object,
+    subItems: PropTypes.array,
+    itemBackground: PropTypes.string,
+    id: PropTypes.number,
+    name: PropTypes.string,
+    isFolder: PropTypes.bool,
+
+}
+
 export default SecondLevelItem
+
