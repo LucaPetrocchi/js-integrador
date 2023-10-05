@@ -28,9 +28,8 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
     return(<>
             <li 
                 style={{
-                    background: (hoverState || openState ) ? itemActive : 'none', 
-                    // cursor: (hoverState || openState ) ? 'pointer' : 'none',
-                    // si tiene el mouse arriba O hiciste clic, el background y el cursor cambian
+                    background: hoverState || openState  ? itemActive : 'none', 
+                    borderBottom: (hoverState || openState ) ? '1px solid gray' : 'none',
                 }}
                 ref={ref}
                 className='First-Level-Item'
@@ -45,12 +44,12 @@ function FirstLevelItem ({item, itemColor, itemActive, url, otherItems}) {
                         margin: 'auto 3px auto 0px'
                     }}
                 >
-                    {name} 
+                    {name}
                 </p>
-                <div className={openState ? 'arrow-active arrow-transition':'arrow-transition' }> 
-                    {isFolder && <ItemTriangle arrowColor={itemColor} />} {/* si es folder, pone el triangulito SVG */}
+                <div className={openState||hoverState ? 'arrow-active arrow-transition':'arrow-transition' }> 
+                    {(isFolder||hoverState) && isFolder ? <ItemTriangle arrowColor={itemColor} /> : undefined} {/* si es folder, pone el triangulito SVG */}
                 </div>
-                {isFolder && (openState ? ( // si es folder y está abierto, muestra sus contenidos
+                {isFolder && (openState || hoverState ? ( // si es folder y está abierto, muestra sus contenidos
                     <FolderContents items={subItems} subItems={lastLevelItems} itemBackground={itemActive}/>
                 ) : null)}
             </li>

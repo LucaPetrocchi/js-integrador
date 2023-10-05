@@ -23,23 +23,27 @@ function SecondLevelItem ({item, subItems, itemBackground}) {
         const rect = ref.current.getBoundingClientRect()
         setPositionW(rect.width)
     }, [])    
+    
 
-    return (    
-        <li className="folderContentsItems"
-            style={{background: itemBackground}}
-            onMouseEnter={hoverToggle}
-            onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
-            onClick={openToggle} // al hacer click dentro, cambia el state open
-            ref={ref}
-        >
-        {name}
-        <div className='arrow-transition'> 
-                {isFolder && <ItemTriangle />} {/* si es folder, pone el triangulito SVG */}
-        </div>
-        {isFolder && (openState ? (
-            <SubFolderContents items={subItems} itemBackground={itemBackground} positionW={positionW} />
-            ) : null)}
-        </li>
+    return ( 
+        // style={{background: `linear-gradient(to left,${itemBackground}, black, ${itemBackground})`}}
+        // <div className="elborde" >
+            <li className="folderContentsItems"
+                style={{background: itemBackground}}
+                onMouseEnter={hoverToggle}
+                onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
+                onClick={openToggle} // al hacer click dentro, cambia el state open
+                ref={ref}
+                >
+            {name}
+            <div className='arrow-transition'> 
+                    {isFolder && <ItemTriangle />} {/* si es folder, pone el triangulito SVG */}
+            </div>
+            {isFolder && (openState||hoverState ? (
+                <SubFolderContents items={subItems} itemBackground={itemBackground} positionW={positionW} />
+                ) : null)}
+            </li>
+        // </div>
     )
 
 

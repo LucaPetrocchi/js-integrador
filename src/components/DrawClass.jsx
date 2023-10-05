@@ -8,13 +8,25 @@ export default function UML(props) {
   const attributeSpacing = 57;
   const methodSpacing = 50;
 
-  const height_rect_attribute = 150 + CLASS_UML.attributes.length * 60;
-  const height_rect_method = 100 + CLASS_UML.methods.length * 50;
-  const svg_height = height_rect_attribute + height_rect_method
+  const heightRectAttribute = 150 + CLASS_UML.attributes.length * 60;
+  const heightRectMethod = 100 + CLASS_UML.methods.length * 50;
+  const svgHeight = heightRectAttribute + heightRectMethod
+
+
+  const palabraMasLarga = (attributes, methods, name) => {
+    let palabras = attributes.concat(methods, name);
+    let longitudes = palabras.map(palabra => palabra.length);
+    let maxLongitud = Math.max(...longitudes);
+    return maxLongitud
+  }
+
+  const svgWidth = palabraMasLarga(CLASS_UML.attributes, CLASS_UML.methods, CLASS_UML.name)
+
+  console.log(svgWidth)
   
   return (
     <>    
-      <svg width="500" height={svg_height} viewBox={`0 0 500 ${svg_height}`}>
+      <svg width={`${svgWidth * 11.5 + 250}px`} height={svgHeight} viewBox={`0 0 ${svgWidth * 10 + 250}px ${svgHeight}`}>
         
         
         
@@ -32,7 +44,7 @@ export default function UML(props) {
         <g stroke={CLASS_UML.borderColor} strokeWidth="2px" fill="white">
           
           {/* RECTANGULO ATRIBUTOS */}
-          <rect x="0px" y="100px" width="100%" height={`${height_rect_attribute}px`} />
+          <rect x="0px" y="100px" width="100%" height={`${heightRectAttribute}px`} />
           {
             CLASS_UML.attributes.map((attribute, index) => (
               <text key={attribute} x="50%" y={`${150 + index * attributeSpacing}px`} fontSize="25px" alignmentBaseline="middle" textAnchor="middle" fill={CLASS_UML.textColor} stroke="none">
@@ -45,10 +57,10 @@ export default function UML(props) {
         <g stroke={CLASS_UML.borderColor} strokeWidth="2px" fill="white">
           
           {/* RECTANGULO METODOS */}
-          <rect x="0px" y={`${height_rect_attribute}px`} width="100%" height={`${height_rect_method}px`} />
+          <rect x="0px" y={`${heightRectAttribute}px`} width="100%" height={`${heightRectMethod}px`} />
           {
             CLASS_UML.methods.map((method, index) => (
-              <text key={method} x="50%" y={`${75 + height_rect_attribute + index * methodSpacing}px`} fontSize="25px" alignmentBaseline="middle" textAnchor="middle" fill={CLASS_UML.textColor} stroke="none">
+              <text key={method} x="50%" y={`${75 + heightRectAttribute + index * methodSpacing}px`} fontSize="25px" alignmentBaseline="middle" textAnchor="middle" fill={CLASS_UML.textColor} stroke="none">
                 {method}
               </text>
             ))

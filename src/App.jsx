@@ -1,5 +1,6 @@
 
 import './App.css'
+import './App.css'
 import Menu from './components/Menu'
 import UML from './components/DrawClass';
 
@@ -21,8 +22,17 @@ const CLASS_UML2 = {
   textColor:'black'
 }
 
-function App() {
+const CLASS_UML3 = {
+  name: 'Person',
+  attributes: ['+name:str','+phoneNumberNumberNumberNumberNumberNumberNumberNumberNumberNumber:str','+emailAddress:str',],
+  methods:['+purcharseParkinPass()'],
+  borderColor:'green',
+  headColor:'#ccff99',
+  textColor:'black'
+}
 
+
+function App() {
   const configMenu = {
     configColor: {
       background:'#c3c3c3', // Color de Fondo General de la botonera
@@ -40,7 +50,7 @@ function App() {
 
       {name:'Action', isFolder:false, id:3, idPadre:2},
       {name:'Another action', isFolder:false, id:4, idPadre:2},
-      {name:'sub menussssssssssssssssssssssss', isFolder:true, id:5, idPadre:2},
+      {name:'sub menus', isFolder:true, id:5, idPadre:2},
       
       {name:'Action', isFolder:false, id:33, idPadre:22},
       {name:'another Action', isFolder:false, id:332, idPadre:22},
@@ -56,17 +66,16 @@ function App() {
       {name:'Another action', isFolder:false, id:55, idPadre:5},
       {name:'something else here', isFolder:false, id:56, idPadre:5},
     ],
-    }
-
+  }
   return (<>
   
     <Menu config={configMenu} />
 
-    <p>UML 1</p>
-    <UML CLASS_UML={CLASS_UML} />
-    <p>UML 2</p>
-    <UML CLASS_UML={CLASS_UML2} />
-  
+    <div className='graficos-svg'>
+      <UML CLASS_UML={CLASS_UML} />
+      <UML CLASS_UML={CLASS_UML2} />
+      <UML CLASS_UML={CLASS_UML3} />
+    </div>
   </>)
 }
 
