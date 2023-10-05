@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function UML(props) {
 
@@ -11,7 +12,6 @@ export default function UML(props) {
   const heightRectAttribute = 150 + CLASS_UML.attributes.length * 60;
   const heightRectMethod = 100 + CLASS_UML.methods.length * 50;
   const svgHeight = heightRectAttribute + heightRectMethod
-
 
   const palabraMasLarga = (attributes, methods, name) => {
     let palabras = attributes.concat(methods, name);
@@ -68,4 +68,14 @@ export default function UML(props) {
       </svg>
     </>
   )
+}
+
+UML.propTypes = {
+  CLASS_UML: PropTypes.object,
+  name: PropTypes.string,
+  attributes: PropTypes.array,
+  methods: PropTypes.array,
+  borderColor: PropTypes.string,
+  headColor: PropTypes.string,
+  textColor: PropTypes.string,
 }
