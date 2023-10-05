@@ -1,7 +1,11 @@
-.subfolderContentsItems {
+.thirdLevelItem {
     position: relative;
     padding-left: 0;
     padding: 4px 10px;
     margin:0;
     border-radius: 10px;
+}
+
+.thirdLevelItem:hover {
+    filter: brightness(125%);
 }

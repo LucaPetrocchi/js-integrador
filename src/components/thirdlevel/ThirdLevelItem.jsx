@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 
 function ThirdLevelItem({name, itemBackground}) {
   return (
-
-    <li className='subfolderContentsItems' style={{background: itemBackground}}>
-      {name}
+    <li className='thirdLevelItem' style={{background: itemBackground}}>
+        {name}
     </li>
   )
 }

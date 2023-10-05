@@ -13,10 +13,10 @@ function Menu({ config }) {
 
   return (<>
     <ul style={{
-      background: configColor.background,
-      color: configColor.itemColor,
-    }}
-      className='Menu'
+            background: configColor.background,
+            color: configColor.itemColor,
+        }} 
+        className='menu'
     >
       {firstLevelItems.map((item) => { // devuelve un objeto FirstLevelItem (tipo <li>) por cada ítem de primer nivel
         return (

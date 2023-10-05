@@ -1,4 +1,4 @@
-.folderContentsItems {
+.secondLevelItem {
     display: flex;
     align-items: center;
     padding-left: 0;
@@ -15,7 +15,7 @@
     /* background-color: blue; */
 }
 
-.folderContentsItems:hover {
+.secondLevelItem:hover {
     filter: brightness(125%);
 }
 

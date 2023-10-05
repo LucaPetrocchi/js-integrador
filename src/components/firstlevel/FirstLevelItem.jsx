@@ -25,34 +25,34 @@ function FirstLevelItem({ item, itemColor, itemActive, url, otherItems }) {
   // de lo contrario, subItems = undefined
   const lastLevelItems = isFolder ? otherItems.filter((subItem) => subItem.idPadre != id) : undefined
 
-  return (<>
-    <li
-      style={{
-        background: hoverState || openState ? itemActive : 'none',
-        borderBottom: (hoverState || openState) ? '1px solid gray' : 'none',
-      }}
-      ref={ref}
-      className='First-Level-Item'
-      onMouseEnter={hoverToggle}
-      onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
-      onClick={isFolder ? openToggle : undefined} // al hacer click dentro, cambia el state open
-    >
-      <p
-        style={{
-          color: itemColor,
-          textDecoration: 'none',
-          margin: 'auto 3px auto 0px'
-        }}
-      >
-        {name}
-      </p>
-      <div className={openState || hoverState ? 'arrow-active arrow-transition' : 'arrow-transition'}>
-        {(isFolder || hoverState) && isFolder ? <ItemTriangle arrowColor={itemColor} /> : undefined} {/* si es folder, pone el triangulito SVG */}
-      </div>
-      {isFolder && (openState || hoverState ? ( // si es folder y está abierto, muestra sus contenidos
-        <FolderContents items={subItems} subItems={lastLevelItems} itemBackground={itemActive} />
-      ) : null)}
-    </li>
+    return(<>
+            <li 
+                style={{
+                    background: hoverState || openState  ? itemActive : 'none', 
+                    borderBottom: (hoverState || openState ) ? '1px solid gray' : 'none',
+                }}
+                ref={ref}
+                className='firstLevelItem'
+                onMouseEnter={hoverToggle}
+                onMouseLeave={hoverToggle} // al entrar o sacar el mouse encima, cambia el state hover
+                onClick={ isFolder ? openToggle : undefined } // al hacer click dentro, cambia el state open
+            > 
+                <p 
+                    style={{
+                        color: itemColor,
+                        textDecoration: 'none',
+                        margin: 'auto 3px auto 0px'
+                    }}
+                >
+                    {name}
+                </p>
+                <div className={openState||hoverState ? 'arrow-active arrow-transition':'arrow-transition' }> 
+                    {(isFolder||hoverState) && isFolder ? <ItemTriangle arrowColor={itemColor} /> : undefined} {/* si es folder, pone el triangulito SVG */}
+                </div>
+                {isFolder && (openState || hoverState ? ( // si es folder y está abierto, muestra sus contenidos
+                    <FolderContents items={subItems} subItems={lastLevelItems} itemBackground={itemActive}/>
+                ) : null)}
+            </li>
 
   </>
   )

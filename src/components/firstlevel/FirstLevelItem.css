@@ -1,4 +1,4 @@
-.First-Level-Item {
+.firstLevelItem {
     display: flex;
     align-items: center;
     padding-left: 0;
@@ -8,9 +8,6 @@
     margin: 0;
     transition: 300ms;
     border-radius: 8px 8px 0px 0px;
-}
-
-.First-Level-Item {
     cursor: pointer;
 }
 
