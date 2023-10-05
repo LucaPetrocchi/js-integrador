@@ -21,12 +21,10 @@ export default function UML(props) {
   }
 
   const svgWidth = palabraMasLarga(CLASS_UML.attributes, CLASS_UML.methods, CLASS_UML.name)
-
-  console.log(svgWidth)
   
   return (
     <>    
-      <svg width={`${svgWidth * 11.5 + 250}px`} height={svgHeight} viewBox={`0 0 ${svgWidth * 10 + 250}px ${svgHeight}`}>
+      <svg width={`${svgWidth * 11.5 + 250}px`} height={svgHeight} viewBox={`0 0 ${svgWidth * 10 + 250} ${svgHeight}`}>
         
         
         

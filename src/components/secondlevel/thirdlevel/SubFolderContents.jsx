@@ -7,7 +7,7 @@ export default function SubFolderContents({items, itemBackground, positionW}) {
         <ul className='subfolderContents' style={{translate: `${positionW -10}px`, backgroundColor: itemBackground }}>
             {items.map((item) => { 
                 return (
-                    <ThirdLevelItem title={item.name} itemBackground={itemBackground} id={item.id}  />
+                    <ThirdLevelItem key={item.id} title={item.name} itemBackground={itemBackground} id={item.id}  />
                 )
             })}
         </ul>

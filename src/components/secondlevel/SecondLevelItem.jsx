@@ -6,6 +6,9 @@ import ItemTriangle from "../SvgArrow"
 function SecondLevelItem ({item, subItems, itemBackground}) {
     const ref = useRef()
     const {id, name, isFolder} = item
+
+    const i = subItems.filter((subItem) => subItem.idPadre === id)
+
     const [hoverState, setHoverState] = useState(false) // state de hover
     const [openState, setOpenState] = useState(false) // state de folder: si está abierto o no
     const [positionW, setPositionW] = useState(0)
@@ -40,7 +43,7 @@ function SecondLevelItem ({item, subItems, itemBackground}) {
                     {isFolder && <ItemTriangle />} {/* si es folder, pone el triangulito SVG */}
             </div>
             {isFolder && (openState||hoverState ? (
-                <SubFolderContents items={subItems} itemBackground={itemBackground} positionW={positionW} />
+                <SubFolderContents items={i} itemBackground={itemBackground} positionW={positionW} />
                 ) : null)}
             </li>
         // </div>
