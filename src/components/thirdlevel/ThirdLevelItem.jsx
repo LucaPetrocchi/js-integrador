@@ -5,7 +5,7 @@ function ThirdLevelItem({name, itemBackground}) {
   return (
 
     <li className='subfolderContentsItems' style={{background: itemBackground}}>
-        {name}
+      {name}
     </li>
   )
 }
