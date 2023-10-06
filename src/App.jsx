@@ -14,7 +14,7 @@ const CLASS_UML = {
 }
 
 const CLASS_UML2 = {
-  name: 'Addres',
+  name: 'Address',
   attributes: ['+Street:str','+City:str','+State:str','+PostalCode:int','+Country:str',],
   methods:['-validate():bool', '+outputLabel():str'],
   borderColor:'blue',
