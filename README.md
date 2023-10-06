@@ -2,10 +2,6 @@
 
 El trabajo práctico consta en la primera etapa en la entrega de 2 componentes principales, desarrollados en react y con hojas de estilo propias en cada componente que lo requiera. Como buenas practicas se utilizo eslintrc, correcto uso en nombre de funciones y variables (cammel case), se realizo una buena identacion del codigo, etc
 
-## Integrantes 
-
-Luca Petrocchi y Valentino Arballo, comicion B
-
 ## Como ejecutar el proyecto con vite  
 
 ejecutar `npm dev run`
@@ -33,3 +29,9 @@ La funcionalidad del menu es simple, cuando pasamos el cursor por encima de un e
 ![Imagen menu 2](/public/menu.png)
 
 Ademas, al hacer clic, este se fija para que aun asi sacando el cursor de arriba este no se cierre y siga mostrando sus opciones incluso si sacamos el cursor de encima.
+
+# Integrantes
+- **[Luca Petrocchi](https://github.com/lucapetrocchi)**
+- **[Valentino Arballlo](https://github.com/valentinoarballo)**
+<br>
+2º año, Comision B
