@@ -4,6 +4,11 @@
     cursor: pointer;
 }
 
+.arrowContainer {
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
 .firstLevelItem p {
     text-decoration: 'none';
     margin: 'auto 3px auto 0px'
