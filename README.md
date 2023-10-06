@@ -2,6 +2,10 @@
 
 El trabajo práctico consta en la primera etapa en la entrega de 2 componentes principales, desarrollados en react y con hojas de estilo propias en cada componente que lo requiera.
 
+# Integrantes 
+
+Luca Petrocchi y Valentino Arballo, comicion B
+
 ## DrawClass
 
 Creacion de un componente llamado DrawClass que es capaz de mostrar de forma gráfica nuestra especificación a través de un gráfico SVG.
