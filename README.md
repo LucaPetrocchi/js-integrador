@@ -1,16 +1,16 @@
-# Integrador ReactJS 2023
+## Integrador ReactJS 2023
 
 El trabajo práctico consta en la primera etapa en la entrega de 2 componentes principales, desarrollados en react y con hojas de estilo propias en cada componente que lo requiera. Como buenas practicas se utilizo eslintrc, correcto uso en nombre de funciones y variables (cammel case), se realizo una buena identacion del codigo, etc
 
-# Integrantes 
+## Integrantes 
 
 Luca Petrocchi y Valentino Arballo, comicion B
 
-# Como ejecutar el proyecto con vite  
+## Como ejecutar el proyecto con vite  
 
 ejecutar `npm dev run`
 
-## DrawClass
+# DrawClass
 
 Creacion de un componente llamado DrawClass que es capaz de mostrar de forma gráfica nuestra especificación a través de un gráfico SVG.
 
@@ -22,7 +22,7 @@ El grafico es responsivo a la cantidad de metodos y atributos que reciba, tanto 
 
 Ademas, su color de encabezado y el color del borde dependeran de los parametros que le definamos en el objeto `CLASS_UML`
 
-## Menu
+# Menu
 
 Un componente Menu el cual tomará un objeto con detalles de las opciones, sub opciones y acciones. Ademas de poder modificar su color, su color cuando este esta activo y el color de la fuente.
 
