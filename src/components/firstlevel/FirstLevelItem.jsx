@@ -41,8 +41,6 @@ function FirstLevelItem({ item, itemColor, itemActive, otherItems }) {
                 <p 
                     style={{
                         color: itemColor,
-                        textDecoration: 'none',
-                        margin: 'auto 3px auto 0px'
                     }}
                 >
                     {name}

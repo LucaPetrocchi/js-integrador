@@ -3,3 +3,8 @@
     border-radius: 8px 8px 0px 0px;
     cursor: pointer;
 }
+
+.firstLevelItem p {
+    text-decoration: 'none';
+    margin: 'auto 3px auto 0px'
+}
