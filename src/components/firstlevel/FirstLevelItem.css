@@ -3,3 +3,8 @@
     border-radius: 8px 8px 0px 0px;
     cursor: pointer;
 }
+
+.arrowContainer {
+    margin-top: 3px;
+    margin-left: 2px;
+}

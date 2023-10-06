@@ -47,7 +47,7 @@ function FirstLevelItem({ item, itemColor, itemActive, otherItems }) {
                 >
                     {name}
                 </p>
-                <div style={{marginTop: '3px'}}>
+                <div className='arrowContainer'>
                   <div className={openState||hoverState ? 'arrowActive arrowTransition':'arrowTransition' }> 
                       {(isFolder||hoverState) && isFolder ? <ItemTriangle arrowColor={itemColor} /> : undefined} {/* si es folder, pone el triangulito SVG */}
                   </div>
