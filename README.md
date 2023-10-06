@@ -28,6 +28,8 @@ Un componente Menu el cual tomará un objeto con detalles de las opciones, sub o
 
 ![Imagen menu 1](/public/menu2.png)
 
-La funcionalidad del menu es simple, cuando pasamos el cursor por encima de un elemento el cual contiene items, este nos permite navegar entre sus opciones y si sacamos el cursor de arriba este se cierra automaticamente, ademas al hacer click este se fija para que aun asi sacando el cursor de arriba este no se cierre y siga mostrando sus opciones
+La funcionalidad del menu es simple, cuando pasamos el cursor por encima de un elemento el cual contiene items, este nos permite navegar entre sus opciones y si sacamos el cursor de arriba este se cierra automaticamente. 
 
 ![Imagen menu 2](/public/menu.png)
+
+Ademas, al hacer clic, este se fija para que aun asi sacando el cursor de arriba este no se cierre y siga mostrando sus opciones incluso si sacamos el cursor de encima.
