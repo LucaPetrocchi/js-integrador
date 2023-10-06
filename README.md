@@ -2,7 +2,7 @@
 
 El trabajo práctico consta en la primera etapa en la entrega de 2 componentes principales, desarrollados en react y con hojas de estilo propias en cada componente que lo requiera. Como buenas practicas se utilizo eslintrc, correcto uso en nombre de funciones y variables (cammel case), se realizo una buena identacion del codigo, etc
 
-## Como ejecutar el proyecto con vite  
+# Como ejecutar el proyecto con vite  
 
 ejecutar `npm dev run`
 
